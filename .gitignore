@@ -1,6 +1,7 @@
 __pycache__
 sample_data
 venv/
+data/
 logs
 .ipynb_checkpoints
 .vscode

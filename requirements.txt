@@ -1,0 +1,49 @@
+# AWS CLI
+awscli==1.18.46
+
+# Numpy
+scipy==1.4.1
+numpy==1.18.2
+
+# OpenCV
+cmake==3.17.0
+opencv-python==4.2.0.34
+
+# PyTorch
+torch==1.4.0
+torchvision===0.5.0
+torchtext==0.5.0
+torchsummary==1.5.1
+torchaudio==0.4.0
+
+# TensorFlow
+#keras==2.3.0
+#tensorboard==2.2.0
+#tensorflow==2.1.0
+
+# DVC
+PyDrive2==1.4.9
+dvc==0.93.0
+
+# Other
+# dlib==19.19.0
+ipython==7.7.0
+jupyter==1.0.0
+librosa==0.7.2
+matplotlib==3.2.1
+moviepy==1.0.2
+pandas==1.0.3
+pathlib==1.0.1
+Pillow==6.2.2
+requests==2.22.0
+scikit-learn==0.22.2.post1
+seaborn==0.10.0
+SpeechRecognition==3.8.1
+subprocess.run==0.0.8
+tqdm==4.45.0
+virtualenv==20.0.16
+xgboost==1.0.2
+
+# Catalyst
+catalyst==20.4.1
+alchemy==20.4
