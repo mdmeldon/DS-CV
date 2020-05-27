@@ -1,6 +1,6 @@
 __pycache__
 sample_data
-venv
+venv/
 logs
 .ipynb_checkpoints
 .vscode
