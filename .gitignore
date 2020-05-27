@@ -1,0 +1,8 @@
+__pycache__
+sample_data
+venv
+logs
+.ipynb_checkpoints
+.vscode
+.history
+.DS_Store
