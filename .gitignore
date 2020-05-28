@@ -1,7 +1,9 @@
 __pycache__
 sample_data
 venv/
-data/
+data/raw/
+data/logs/
+SoundMFFCParams/
 logs
 .ipynb_checkpoints
 .vscode
