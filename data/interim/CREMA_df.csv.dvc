@@ -1,0 +1,7 @@
+md5: d432255d6f1a815d5b768f94765708f0
+outs:
+- md5: 33ab1657fec921cff15a3bedb73328da
+  path: CREMA_df.csv
+  cache: true
+  metric: false
+  persist: false
