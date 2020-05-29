@@ -2,7 +2,6 @@ __pycache__
 sample_data
 venv/
 data/raw/
-data/logs/
 SoundMFFCParams/
 logs
 .ipynb_checkpoints
