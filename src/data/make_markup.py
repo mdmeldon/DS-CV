@@ -30,9 +30,10 @@ def SAVEE_markup(dir_path):
     for i in dir_list:
         if i[-8:-6] in emo_dict:
             emotion.append(emo_dict[i[-8:-6]])
+            path.append(dir_path + i)
         # else:
         #     emotion.append('male_error') 
-        path.append(dir_path + i)
+        
     
     # Now check out the label count distribution 
     SAVEE_df = pd.DataFrame(emotion, columns = ['labels'])
@@ -87,9 +88,10 @@ def TESS_markup(dir_path):
             now_emotional = i.lower()[4:6] 
             if  now_emotional in emo_dict:
                 emotion.append(emo_dict[now_emotional])
+                path.append(dir_path + i + "/" + f)
             # else:
             #     emotion.append('Unknown')
-            path.append(dir_path + i + "/" + f)
+            
 
     TESS_df = pd.DataFrame(emotion, columns = ['labels'])
     TESS_df['source'] = 'TESS'
