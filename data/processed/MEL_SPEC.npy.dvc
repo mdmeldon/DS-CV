@@ -1,7 +1,0 @@
-md5: ff1b69d9e8f8be6e3b69a2cf4cc37d9d
-outs:
-- md5: 54a85df06ad7def864bea808e908c9e6
-  path: MEL_SPEC.npy
-  cache: true
-  metric: false
-  persist: false

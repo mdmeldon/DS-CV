@@ -1,7 +1,0 @@
-md5: 7e61e136d1c2312efeb391cbb64fe20d
-outs:
-- md5: 9c0f35bd4d070ec450e621c9ab59d288
-  path: MFCC_PREPARE.npy
-  cache: true
-  metric: false
-  persist: false
