@@ -1,3 +1,4 @@
 /MFCC_PREPARE.npy
 /Data_path.csv
 /MFCC_PREPARE_AUG.npy
+/MEL_SPEC.npy
