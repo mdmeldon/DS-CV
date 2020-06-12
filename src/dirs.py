@@ -7,7 +7,7 @@ DIR_DATA_LOGS.mkdir(parents=True, exist_ok=True)
 DIR_DATA_RAW = DIR_DATA / 'raw'
 DIR_DATA_RAW.mkdir(parents=True, exist_ok=True)
 
-DIR_DATA_INTERHIM = DIR_DATA / 'interhim'
+DIR_DATA_INTERHIM = DIR_DATA / 'interim'
 DIR_DATA_INTERHIM.mkdir(parents=True, exist_ok=True)
 
 DIR_DATA_PROCESSED = DIR_DATA / 'processed'

@@ -28,10 +28,11 @@ def feature_extraction(df, n_params= 30, aug= 0,sampling_rate= 44100, audio_dura
     cnt = 0
     for fname in tqdm(df.path):
         file_path = fname
-        data, _ = librosa.load(file_path, sr=sampling_rate
-                               ,res_type="kaiser_fast"
-                               ,duration=2.5
-                               ,offset=0.5
+        data, _ = librosa.load(file_path, 
+                                sr=sampling_rate,
+                                res_type="kaiser_fast",
+                                duration=2.5, # Продолжительность
+                                offset=0.5 # Начать считывание с 0.5
                               )
 
         # Random offset / Padding

@@ -1,62 +1,24 @@
-# sklearn
-from sklearn.metrics import confusion_matrix, accuracy_score
-from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import LabelEncoder
-from sklearn.preprocessing import StandardScaler
-
-#import torchvision
-# from models.resnet import resnet50
-from .auc import AUCCallback
+#import torch
 import torchvision
 import torch
 import torch.nn as nn
 from torch.utils.data import DataLoader, TensorDataset
+
+#import catalyst
 from catalyst.dl import SupervisedRunner
 from catalyst.dl.utils import set_global_seed, prepare_cudnn
 from catalyst.dl.callbacks import AccuracyCallback, PrecisionRecallF1ScoreCallback, VerboseLogger, ConfusionMatrixCallback
 
 # Other  
-from tqdm import tqdm, tqdm_pandas
-import scipy
-from scipy.stats import skew
-import librosa.display
-import json
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import LabelEncoder
 import numpy as np
-import matplotlib.pyplot as plt
-from matplotlib.pyplot import specgram
 import pandas as pd
-import seaborn as sns
-import glob 
-import os
-import sys
-import IPython.display as ipd  # To play sound in the notebook
-import warnings
-from pathlib import Path
+
+# My
+from .auc import AUCCallback
+from .transform import get_X_scaled
 from ..dirs import DIR_DATA_PROCESSED
-# ignore warnings 
-if not sys.warnoptions:
-    warnings.simplefilter("ignore")
-
-def fit_X_scaler(X_train):
-    """fit StandardScaler，and return StandardScaler object
-    """
-    sc = StandardScaler()
-    for _, clips in enumerate(X_train):
-        data_i_truncated = np.squeeze(clips)
-        sc.partial_fit(data_i_truncated)
-    return sc
-
-def get_X_scaled(X_train, scaler=None):
-    """apply normlization
-    """
-    X_train_new = np.zeros(X_train.shape)
-    for indx, clips in enumerate(X_train):
-        data_i_truncated = np.squeeze(clips)
-        if scaler is not None:  # normlize
-            data_i_truncated = scaler.transform(data_i_truncated)
-        X_train_new[indx, 0, :, :] = data_i_truncated
-    return X_train_new
-
 
 
 if __name__ == '__main__':
@@ -65,7 +27,7 @@ if __name__ == '__main__':
     N_CLASS = 12
 
     
-    DIR_DATA = Path(__file__).absolute().parent.parent / 'data'
+    # DIR_DATA = Path(__file__).absolute().parent.parent / 'data'
     ref = pd.read_csv(str(DIR_DATA_PROCESSED / 'Data_path.csv'))
     mfcc = np.load(str(DIR_DATA_PROCESSED / 'MFCC_PREPARE_AUG.npy'))
 
@@ -84,9 +46,8 @@ if __name__ == '__main__':
     y_test = lb.fit_transform(y_test) # to_categorical
 
     # Normalization as per the standard NN process
-    sc = fit_X_scaler(X_train)
-    X_train = get_X_scaled(X_train, sc)
-    X_test = get_X_scaled(X_test, sc)
+    X_train = get_X_scaled(X_train)
+    X_test = get_X_scaled(X_test)
 
     classes_names = list(lb.classes_)
 
